@@ -25,15 +25,11 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
-      - name: Dependencies
-        run: |
-          sudo apt-get update
-          sudo apt-get install --yes g++ libboost-all-dev make cmake
-
       - name: Install deps
-        run: |
-          python -m pip install cibuildwheel==2.3.1
-          python -m pip install -r ./dev-requirements.txt
+        run: python -m pip install cibuildwheel==2.3.1
+
+      - name: Build wheels
+        run: python -m cibuildwheel --output-dir wheelhouse
 
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
