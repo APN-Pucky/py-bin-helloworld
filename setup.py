@@ -15,7 +15,7 @@ setup(
     description="a minimal example package with CI (cpp version)",
     author='The scikit-build team',
     license="MIT",
-    packages=['tyrant_optimize'],
+    packages=['helloworld'],
     tests_require=['pytest'],
     setup_requires=setup_requires
 )
